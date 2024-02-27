@@ -3,7 +3,6 @@
   .container {
     height: max(65vh, 300px);
     padding: 2rem;
-    background-image: url("/wall.jpg");
     background-position: 0;
     border-radius: 25px;
     display: flex;
@@ -32,20 +31,30 @@
       .input-field {
         display: none;
       }
-      .submit {
-        position: absolute;
-        width: 180px;
-        height: 50px;
-        color: white;
-        background-color: rgb(147, 4, 157);
-        border-radius: 7px;
-        outline: pink dashed 1px;
-        border: none;
-        font-size: 1.8rem;
-        &:hover {
-          background-color: rgba(147, 4, 157, 0.31);
-          cursor: pointer;
-        }
+    }
+  }
+  .submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: max(20vw, 500px);
+    .filequeue {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #submit {
+      width: 180px;
+      height: 50px;
+      color: white;
+      background-color: rgb(147, 4, 157);
+      border-radius: 7px;
+      outline: pink dashed 1px;
+      border: none;
+      font-size: 1.8rem;
+      &:hover {
+        background-color: rgba(147, 4, 157, 0.31);
+        cursor: pointer;
       }
     }
   }

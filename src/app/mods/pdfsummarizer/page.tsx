@@ -3,13 +3,19 @@ import "./mod1.css";
 import { useState } from "react";
 import { MdDelete } from "react-icons/md";
 
-const mod1 = () => {
+const pdfsummarizer = () => {
   const [fileName, setFileName] = useState<string>("");
   const [file, setFile] = useState<File | undefined>();
 
-  async function HandleOnSubmit(e: React.SyntheticEvent) {
+  function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
-    console.log("file ", file);
+    if (file) {
+      console.log("name =", file.name);
+    }
+  }
+  function HandleDelete() {
+    setFile(undefined);
+    setFileName("");
   }
   function HandleOnChange(e: React.FormEvent<HTMLInputElement>) {
     const target = e.target as HTMLInputElement & {
@@ -43,25 +49,29 @@ const mod1 = () => {
           <input
             type="file"
             name="file"
+            accept="application/pdf"
             className="input-field"
             onChange={HandleOnChange}
           />
+        </form>
+        <div className="submit">
           <input
             type="button"
-            className="submit"
+            id="submit"
             value="SEND!"
             onClick={HandleOnSubmit}
           />
           {file ? (
-            <div className="fileque">
-              <p>{fileName} </p> <MdDelete />
+            <div className="filequeue">
+              <p>{fileName} </p>
+              <MdDelete onClick={HandleDelete} />
             </div>
           ) : (
             <></>
           )}
-        </form>
+        </div>
       </div>
     </div>
   );
 };
-export default mod1;
+export default pdfsummarizer;

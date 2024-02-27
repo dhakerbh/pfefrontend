@@ -13,22 +13,22 @@ const Header = () => {
       <li>
         {" "}
         <FaYoutube className="react-icons" />
-        <a href="/mods/mod1">YouTube Video Summarizer</a>
+        <a href="/mods/youtubesummarizer">YouTube Video Summarizer</a>
       </li>
       <li>
         {" "}
         <FaRegFilePdf className="react-icons" />
-        <a href="/mods/mod2">PDF Summarizer</a>
+        <a href="/mods/pdfsummarizer">PDF Summarizer</a>
       </li>
       <li>
         {" "}
         <FaImage className="react-icons" />
-        <a href="/mods/mod3">Image To Text</a>
+        <a href="/mods/imagetotext">Image To Text</a>
       </li>
       <li>
         {" "}
         <BsFiletypeTxt className="react-icons" />
-        <a href="/mods/mod5">Text Summarizer</a>
+        <a href="/mods/textsummarizer">Text Summarizer</a>
       </li>
       <li>
         {" "}

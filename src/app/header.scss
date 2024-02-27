@@ -5,10 +5,12 @@
   color: white;
 }
 header {
+  position: sticky;
+  top: 0;
   max-height: 75px;
   display: flex;
   justify-content: center;
-
+  background-color: rgba(0, 0, 0, 0.496);
   align-items: center;
   width: 100%;
   li {
@@ -47,7 +49,8 @@ header {
 
 body {
   //background-image: url("../../public/wall1.jpg");
+  background-image: url("/wall.jpg");
   background-color: black;
-  background-size: cover;
+  background-size: 170%;
   background-repeat: no-repeat;
 }

@@ -4,7 +4,6 @@
 .wrappermod1 .container {
   height: max(65vh, 300px);
   padding: 2rem;
-  background-image: url("/wall.jpg");
   background-position: 0;
   border-radius: 25px;
   display: flex;
@@ -35,8 +34,18 @@
 .wrappermod1 .container form .input-field {
   display: none;
 }
-.wrappermod1 .container form .submit {
-  position: absolute;
+.wrappermod1 .submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: max(20vw, 500px);
+}
+.wrappermod1 .submit .filequeue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrappermod1 .submit #submit {
   width: 180px;
   height: 50px;
   color: white;
@@ -46,7 +55,7 @@
   border: none;
   font-size: 1.8rem;
 }
-.wrappermod1 .container form .submit:hover {
+.wrappermod1 .submit #submit:hover {
   background-color: rgba(147, 4, 157, 0.31);
   cursor: pointer;
 }/*# sourceMappingURL=mod1.css.map */

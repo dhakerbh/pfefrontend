@@ -6,9 +6,12 @@
 }
 
 header {
+  position: sticky;
+  top: 0;
   max-height: 75px;
   display: flex;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.496);
   align-items: center;
   width: 100%;
 }
@@ -46,7 +49,8 @@ header img {
 }
 
 body {
+  background-image: url("/wall.jpg");
   background-color: black;
-  background-size: cover;
+  background-size: 170%;
   background-repeat: no-repeat;
 }/*# sourceMappingURL=header.css.map */
