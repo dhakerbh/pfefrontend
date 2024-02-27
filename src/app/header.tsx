@@ -8,27 +8,27 @@ import { BsFiletypeTxt } from "react-icons/bs";
 const Header = () => {
   return (
     <header>
-      <img src="logo.png" alt="logo" />
+      <img src="/logo.png" alt="logo" />
 
       <li>
         {" "}
         <FaYoutube className="react-icons" />
-        <a href="mod1">YouTube Video Summarizer</a>
+        <a href="/mods/mod1">YouTube Video Summarizer</a>
       </li>
       <li>
         {" "}
         <FaRegFilePdf className="react-icons" />
-        <a href="mod2">PDF Summarizer</a>
+        <a href="/mods/mod2">PDF Summarizer</a>
       </li>
       <li>
         {" "}
         <FaImage className="react-icons" />
-        <a href="mod3">Image To Text</a>
+        <a href="/mods/mod3">Image To Text</a>
       </li>
       <li>
         {" "}
         <BsFiletypeTxt className="react-icons" />
-        <a href="mod4">Text Summarizer</a>
+        <a href="/mods/mod5">Text Summarizer</a>
       </li>
       <li>
         {" "}
