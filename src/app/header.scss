@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+header {
+  max-height: 75px;
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  width: 100%;
+  li {
+    list-style-type: none;
+    text-wrap: nowrap;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    padding: 10px 20px;
+    gap: 5px;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease-out;
+      border-radius: 8px;
+    }
+    .react-icons {
+      fill: white;
+    }
+    a {
+      all: unset;
+      color: white;
+    }
+  }
+  img {
+    width: 200px;
+    height: 75px;
+    flex-grow: unset;
+    border-radius: 20px;
+    padding-right: 50px;
+  }
+}
+
+body {
+  //background-image: url("../../public/wall1.jpg");
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
