@@ -3,8 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "DM Serif Display", serif;
-  color: white;
 }
 header {
   position: sticky;
@@ -55,6 +53,8 @@ body {
   background-color: black;
   background-size: 170%;
   background-repeat: no-repeat;
+  color: white;
+  font-family: "DM Serif Display", serif;
 }
 p {
   font-family: "Karla", sans-serif;
