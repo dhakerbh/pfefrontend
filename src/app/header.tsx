@@ -1,7 +1,6 @@
 "use client";
 import "./header.css";
 import { FaYoutube, FaRegFilePdf, FaImage } from "react-icons/fa";
-import { GrDocumentTxt } from "react-icons/gr";
 import { MdInfoOutline } from "react-icons/md";
 import { BsFiletypeTxt } from "react-icons/bs";
 

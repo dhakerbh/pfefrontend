@@ -7,7 +7,6 @@
 .yarn/install-state.gz
 /src/app/mods/youtubesummarizer
 /src/app/mods/textsummarizer
-/src/app/mods/imagetotext
 
 # testing
 /coverage
