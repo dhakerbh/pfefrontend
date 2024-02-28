@@ -10,6 +10,8 @@ const pdfsummarizer = () => {
     console.log(text);
   }
   function HandleChange({ target }: React.SyntheticEvent) {
+    // @ts-ignore
+
     setText(target.value);
   }
   return (
@@ -27,6 +29,8 @@ const pdfsummarizer = () => {
           rows={25}
           cols={100}
           id="text"
+          // @ts-ignore
+
           value={text}
           onChange={(e) => {
             HandleChange(e);
