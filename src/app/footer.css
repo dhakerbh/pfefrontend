@@ -7,8 +7,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 footer .icons {
+  padding-right: 40px;
   display: flex;
   gap: 10px;
 }

@@ -7,7 +7,9 @@ import { BsFiletypeTxt } from "react-icons/bs";
 const Header = () => {
   return (
     <header>
-      <img src="/logo.png" alt="logo" />
+      <a href="/">
+        <img src="/logo.png" alt="logo" />
+      </a>
 
       <li>
         {" "}
@@ -32,7 +34,7 @@ const Header = () => {
       <li>
         {" "}
         <MdInfoOutline className="react-icons" />
-        <a href="about">About Us</a>
+        <a href="/about">About Us</a>
       </li>
     </header>
   );
