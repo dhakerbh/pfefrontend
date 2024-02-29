@@ -1,5 +1,5 @@
 {
-  "Index": {
-    "title": "Bonjour Monde!"
-  }
+  "Hello world!": "Bonjour Monde!",
+  "Start Now !": "Commence maintenant",
+  "Text Summarizer": "resumé"
 }

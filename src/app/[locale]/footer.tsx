@@ -1,18 +1,19 @@
 import { FaGithub, FaFacebook } from "react-icons/fa";
 import "./footer.css";
+import Link from "next/link";
 const Footer = () => {
   return (
     <footer>
-      <a href="/about" id="link">
+      <Link href="/about" id="link">
         About Us
-      </a>
+      </Link>
       <div className="icons">
-        <a href="https://www.github.com/dhakerbh">
+        <Link href="https://www.github.com/dhakerbh">
           <FaGithub className="icon" />
-        </a>
-        <a href="https://www.facebook.com/raa33d">
+        </Link>
+        <Link href="https://www.facebook.com/raa33d">
           <FaFacebook className="icon" />
-        </a>
+        </Link>
       </div>
     </footer>
   );
