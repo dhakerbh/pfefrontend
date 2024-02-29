@@ -1,0 +1,61 @@
+.wrappermod1 {
+  padding: 10vh 0;
+}
+.wrappermod1 .container {
+  height: max(65vh, 300px);
+  padding: 2rem;
+  background-position: 0;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  line-height: 2.5rem;
+}
+.wrappermod1 .container form {
+  z-index: 1;
+  height: max(20vh, 300px);
+  width: max(20vw, 500px);
+  background-color: rgba(0, 0, 0, 0.23);
+  background-image: url("/upload3.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  outline: dotted 4px black;
+  outline-offset: -10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.wrappermod1 .container form .input-field {
+  display: none;
+}
+.wrappermod1 .submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: max(20vw, 500px);
+}
+.wrappermod1 .submit .filequeue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrappermod1 .submit #submit {
+  width: 180px;
+  height: 50px;
+  color: white;
+  background-color: rgb(147, 4, 157);
+  border-radius: 7px;
+  outline: pink dashed 1px;
+  border: none;
+  font-size: 1.8rem;
+}
+.wrappermod1 .submit #submit:hover {
+  background-color: rgba(147, 4, 157, 0.31);
+  cursor: pointer;
+}/*# sourceMappingURL=mod1.css.map */

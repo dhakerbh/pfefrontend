@@ -1,4 +1,8 @@
+import { useTranslations } from "next-intl";
+
 export default function Home() {
+  const t = useTranslations("Index");
+
   return (
     <div className="container">
       <div className="first-cont">
@@ -6,7 +10,8 @@ export default function Home() {
         <div className="text-cont">
           <h1>
             Elevate Your Education with Student Savior – Your Path to Excellence
-            Begins Here!
+            Begins Here! ----
+            {t("title")}
           </h1>{" "}
           <a href="#mod1">
             <button type="button">Start Now !</button>

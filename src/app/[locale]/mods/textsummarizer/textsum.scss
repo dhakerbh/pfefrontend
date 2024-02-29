@@ -1,0 +1,49 @@
+.wrappermod1 {
+  padding: 10vh 0;
+  .container {
+    height: max(65vh, 300px);
+    padding: 2rem;
+    background-position: 0;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    line-height: 2.5rem;
+    textarea {
+      background-color: rgba(0, 0, 0, 0.701);
+      font-size: 16px;
+      font-family: "Karla", sans-serif;
+      text-decoration: none;
+      outline: dotted 2px rgb(182, 1, 122);
+      padding: 5px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      resize: none;
+    }
+  }
+  .submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max(20vw, 500px);
+
+    #submit {
+      width: 180px;
+      height: 50px;
+      color: white;
+      background-color: rgb(163, 0, 174);
+      border-radius: 7px;
+      border: none;
+      font-size: 1.8rem;
+      outline: rgba(224, 224, 224, 0.422) dashed 2px;
+      &:hover {
+        background-color: rgba(185, 7, 198, 0.501);
+        outline: white solid 2px;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+    }
+  }
+}
