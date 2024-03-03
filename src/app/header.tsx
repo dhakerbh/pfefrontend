@@ -3,8 +3,12 @@ import "./header.css";
 import { FaYoutube, FaRegFilePdf, FaImage } from "react-icons/fa";
 import { MdInfoOutline } from "react-icons/md";
 import { BsFiletypeTxt } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
+
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   return (
     <header>
       <a href="/">
@@ -30,6 +34,7 @@ const Header = () => {
         <MdInfoOutline className="react-icons" />
         About Us
       </a>
+      <LanguageSwitcher />
     </header>
   );
 };
