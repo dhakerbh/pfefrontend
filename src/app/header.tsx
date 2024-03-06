@@ -9,33 +9,27 @@ const Header = () => {
     <header>
       <a href="/">
         <img src="/logo.png" alt="logo" />
-      </a>
-
-      <li>
-        {" "}
+      </a>{" "}
+      <a className="head-elem" href="/mods/youtubesummarizer">
         <FaYoutube className="react-icons" />
-        <a href="/mods/youtubesummarizer">YouTube Video Summarizer</a>
-      </li>
-      <li>
-        {" "}
+        YouTube Video Summarizer
+      </a>
+      <a className="head-elem" href="/mods/pdfsummarizer">
         <FaRegFilePdf className="react-icons" />
-        <a href="/mods/pdfsummarizer">PDF Summarizer</a>
-      </li>
-      <li>
-        {" "}
+        PDF Summarizer
+      </a>
+      <a className="head-elem" href="/mods/imagetotext">
         <FaImage className="react-icons" />
-        <a href="/mods/imagetotext">Image To Text</a>
-      </li>
-      <li>
-        {" "}
+        Image To Text
+      </a>
+      <a className="head-elem" href="/mods/textsummarizer">
         <BsFiletypeTxt className="react-icons" />
-        <a href="/mods/textsummarizer">Text Summarizer</a>
-      </li>
-      <li>
-        {" "}
+        Text Summarizer
+      </a>
+      <a className="head-elem" href="/about">
         <MdInfoOutline className="react-icons" />
-        <a href="/about">About Us</a>
-      </li>
+        About Us
+      </a>
     </header>
   );
 };

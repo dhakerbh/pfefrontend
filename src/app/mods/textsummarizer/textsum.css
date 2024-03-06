@@ -15,7 +15,7 @@
 }
 .wrappermod1 .container textarea {
   background-color: rgba(0, 0, 0, 0.701);
-  font-size: 16px;
+  font-size: 18px;
   font-family: "Karla", sans-serif;
   text-decoration: none;
   outline: dotted 2px rgb(182, 1, 122);
@@ -23,6 +23,7 @@
   border-radius: 8px;
   margin-bottom: 20px;
   resize: none;
+  color: white;
 }
 .wrappermod1 .submit {
   display: flex;
