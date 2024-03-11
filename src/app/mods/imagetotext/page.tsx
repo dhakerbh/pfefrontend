@@ -1,16 +1,25 @@
 "use client";
-import "./mod1.css";
+import "./imagetotext.css";
 import { useState } from "react";
 import { MdDelete } from "react-icons/md";
+
+import uploadfile from "./uploadfile";
 
 const pdfsummarizer = () => {
   const [ImageName, setImageName] = useState<string>("");
   const [image, setImage] = useState<File | undefined>();
   const [imageURL, setImageURL] = useState<string>("");
-  function HandleOnSubmit(e: React.SyntheticEvent) {
+  const [extractedText, setExtractedText] = useState<any>([]);
+
+  async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     if (image) {
       console.log("name =", ImageName);
+      let objectText = await uploadfile(image);
+
+      const arrayText = Object.values(objectText);
+      console.log({ arrayText });
+      setExtractedText(arrayText[0] as any);
     }
   }
   function HandleDelete() {
@@ -74,6 +83,18 @@ const pdfsummarizer = () => {
           ) : (
             <></>
           )}
+        </div>
+        <div className="result-container">
+          <div className="result-text">
+            {extractedText.map((line: any) => {
+              return (
+                <div>
+                  <span key={line}>{line}</span>;
+                  <br />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

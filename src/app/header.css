@@ -46,6 +46,9 @@ header img {
   border-radius: 20px;
   padding-right: 50px;
 }
+header .lang-switch {
+  margin-left: auto;
+}
 
 body {
   background-image: url("/wall.jpg");

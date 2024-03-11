@@ -1,13 +1,16 @@
 "use client";
 import "./textsum.css";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import get_summary from "./getsummary";
 const pdfsummarizer = () => {
   const [text, setText] = useState<String | undefined>("");
-
-  function HandleOnSubmit(e: React.SyntheticEvent) {
+  const [resultSummary, setResultSummary] = useState<String | undefined>("");
+  useEffect(() => {}, [resultSummary]);
+  async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
-    console.log(text);
+    const { message } = await get_summary("wassp");
+
+    setResultSummary(message);
   }
   function HandleChange({ target }: React.SyntheticEvent) {
     // @ts-ignore
@@ -20,9 +23,14 @@ const pdfsummarizer = () => {
         <div className="text">
           <h1>Paste the text, and the AI will do the Magic !</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-            deserunt optio beatae officiis voluptates commodi aliquid minima
-            odit, enim ab?
+            Discover efficiency at its finest with our Text Summarizer tool!
+            Revolutionizing the way you absorb information, this digital gem
+            condenses lengthy texts into concise, coherent summaries. Driven by
+            advanced natural language processing, it dissects content to deliver
+            key insights effortlessly. Perfect for professionals and students
+            alike, our Text Summarizer ensures clarity without sacrificing
+            substance. Simplify your reading experience and elevate your
+            understanding with this indispensable addition to your toolkit!
           </p>
         </div>
         <textarea
@@ -43,6 +51,9 @@ const pdfsummarizer = () => {
             value="Summarize"
             onClick={HandleOnSubmit}
           />
+        </div>
+        <div className="result-container">
+          <div className="result-text">{resultSummary}</div>
         </div>
       </div>
     </div>

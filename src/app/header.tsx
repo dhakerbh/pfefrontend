@@ -32,7 +32,7 @@ const Header = () => {
       </a>
       <a className="head-elem" href="/about">
         <MdInfoOutline className="react-icons" />
-        About Us
+        {t("About us")}
       </a>
       <LanguageSwitcher />
     </header>

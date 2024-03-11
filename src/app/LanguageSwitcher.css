@@ -1,0 +1,20 @@
+.lang-flag {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+.lang-flag:hover {
+  cursor: pointer;
+}
+
+#en {
+  background-image: url("/en.png");
+}
+
+#fr {
+  background-image: url("/fr.png");
+}
+
+#ar {
+  background-image: url("/ar.png");
+}/*# sourceMappingURL=LanguageSwitcher.css.map */

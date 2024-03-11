@@ -45,10 +45,12 @@ header {
     border-radius: 20px;
     padding-right: 50px;
   }
+  .lang-switch {
+    margin-left: auto;
+  }
 }
 
 body {
-  //background-image: url("../../public/wall1.jpg");
   background-image: url("/wall.jpg");
   background-color: black;
   background-size: 170%;

@@ -2,7 +2,6 @@
   padding: 10vh 0;
 }
 .wrappermod1 .container {
-  height: max(65vh, 300px);
   padding: 2rem;
   background-position: 0;
   border-radius: 25px;
@@ -64,4 +63,4 @@
 .wrappermod1 .submit #submit:hover {
   background-color: rgba(147, 4, 157, 0.31);
   cursor: pointer;
-}/*# sourceMappingURL=mod1.css.map */
+}/*# sourceMappingURL=imagetotext.css.map */
