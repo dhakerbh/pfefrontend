@@ -1,16 +1,33 @@
 "use client";
+/*
+______ _____ _   _ _____ _____ _   _  ___________ 
+|  ___|_   _| \ | |_   _/  ___| | | ||  ___|  _  \
+| |_    | | |  \| | | | \ `--.| |_| || |__ | | | |
+|  _|   | | | . ` | | |  `--. \  _  ||  __|| | | |
+| |    _| |_| |\  |_| |_/\__/ / | | || |___| |/ / 
+\_|    \___/\_| \_/\___/\____/\_| |_/\____/|___/  
+*/
 import "./textsum.css";
 import { useEffect, useState } from "react";
-import get_summary from "./getsummary";
+//import get_summary from "./getsummary";
 const pdfsummarizer = () => {
-  const [text, setText] = useState<String | undefined>("");
-  const [resultSummary, setResultSummary] = useState<String | undefined>("");
+  const [text, setText] = useState<string>("");
+  const [resultSummary, setResultSummary] = useState<string>("");
   useEffect(() => {}, [resultSummary]);
+
+  async function get_summary(text: string) {
+    const req = await fetch("http://127.0.0.1:8080/api/summarizetext", {
+      method: "POST",
+      headers: { 
+        'Content-Type': 'application/json',
+    },
+      body: JSON.stringify({ "text": text })
+    }).then((response) => response.json())
+    .then((data) => {const {message} = data ; setResultSummary(message)})}
+
   async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
-    const { message } = await get_summary("wassp");
-
-    setResultSummary(message);
+    get_summary(text);
   }
   function HandleChange({ target }: React.SyntheticEvent) {
     // @ts-ignore

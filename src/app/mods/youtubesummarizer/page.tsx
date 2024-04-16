@@ -3,15 +3,22 @@ import "./youtube.css";
 import { useState } from "react";
 
 const youtubesummarizer = () => {
-  const [url, getUrl] = useState<String | undefined>();
-
-  function HandleOnSubmit(e: React.SyntheticEvent) {
+  const [url, setUrl] = useState<String | undefined>("");
+  const [result, setResult ] = useState<Array<string>>([]);
+  const res2 = 'hello\nthere!'
+  async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
-    // SUMBIT FUNCTION
-  }
+    const res = await fetch('http://127.0.0.1:8080/api/youtubesummarizer', {
+      method: "POST",
+      headers: { 
+        'Content-Type': 'application/json',
+    },
+      body: JSON.stringify({ "link": url })
+    }).then((response) => response.json())
+    .then((data) => {const {result} = data ; setResult(result)})}
   function HandleOnChange(e: React.FormEvent<HTMLInputElement>) {
     //@ts-ignore
-    getUrl(e.target.value);
+    setUrl(e.target.value);
   }
   return (
     <div className="wrappermod1">
@@ -39,6 +46,15 @@ const youtubesummarizer = () => {
             value="SEND!"
             onClick={HandleOnSubmit}
           />
+        </div>
+        <div className="result">
+        {result.map((line: any) => {
+              return (
+                <div>
+                  <span key={line}>{line}</span>
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>
