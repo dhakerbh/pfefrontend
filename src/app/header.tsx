@@ -6,14 +6,34 @@ import { BsFiletypeTxt } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useState } from "react";
 
 const Header = () => {
+const header = document.querySelector(".header");
+const [isSticky,setIsSticky]= useState<boolean>(false)
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > 75) {
+    setIsSticky(true)
+  } else {
+    setIsSticky(false)
+  }
+});
   const { t, i18n } = useTranslation();
   return (
-    <header>
+    <header className={isSticky ? 'sticky' : ''}>
+      <div className="logo">
       <a href="/">
+        <h1>
+          <span>S</span>tudents <span>S</span>avior
+        </h1></a>
+        {/*
+        <a href="/">
         <img src="/logo.png" alt="logo" />
-      </a>{" "}
+      </a>
+        */}
+        </div>{" "}
+      <div className="head-elem-container">
       <a className="head-elem" href="/mods/youtubesummarizer">
         <FaYoutube className="react-icons" />
         YouTube Video Summarizer
@@ -34,7 +54,7 @@ const Header = () => {
         <MdInfoOutline className="react-icons" />
         {t("About us")}
       </a>
-      <LanguageSwitcher />
+      <LanguageSwitcher /></div>
     </header>
   );
 };

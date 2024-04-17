@@ -2,23 +2,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
 }
 
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.sticky {
+  position: fixed;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  background-color: rgba(255, 255, 255, 0.062);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  animation: slideDown 0.35s ease-out;
+  max-height: 40px;
+}
+.sticky .head-elem {
+  height: 35px;
+}
+
 header {
-  position: sticky;
-  top: 0;
+  z-index: 200;
   max-height: 75px;
+  max-width: 100%;
   display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.496);
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
+header a {
+  text-decoration: none !important;
+  color: white;
+}
+header .head-elem-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
 header .head-elem {
-  text-decoration: none;
   color: white;
   list-style-type: none;
   text-wrap: nowrap;
@@ -29,9 +60,11 @@ header .head-elem {
   justify-content: center;
   align-items: center;
   height: 55px;
+  text-align: center;
   padding: 10px 20px;
   gap: 5px;
   border-radius: 0 0 8px 8px;
+  border: 1px solid rgba(255, 0, 0, 0);
 }
 header .head-elem:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -44,21 +77,31 @@ header .head-elem .react-icons {
 header img {
   width: 200px;
   height: 75px;
-  flex-grow: unset;
+  flex-grow: 1;
+  justify-self: start;
   border-radius: 20px;
   padding-right: 50px;
 }
-header .lang-switch {
-  margin-left: auto;
+header .logo {
+  font-family: "Oleo Script", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 20px;
+  text-shadow: 0px 3px 10px #000000;
+  text-decoration: none;
+  color: white;
+}
+header .logo span {
+  text-shadow: 0px 3px 10px #ff2222;
 }
 
 body {
-  background-image: url("/wall.jpg");
+  background-image: url("/wall4.jpg");
   background-color: black;
-  background-size: 170%;
-  background-repeat: no-repeat;
   color: white;
   font-family: "Madimi One", sans-serif !important;
+  background-size: auto;
 }
 body p {
   font-family: "Karla", sans-serif;
