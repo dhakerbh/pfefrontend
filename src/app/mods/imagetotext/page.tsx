@@ -89,8 +89,7 @@ const pdfsummarizer = () => {
             {extractedText.map((line: any) => {
               return (
                 <div>
-                  <span key={line}>{line}</span>;
-                  <br />
+                  <span key={line}>{line}</span>
                 </div>
               );
             })}

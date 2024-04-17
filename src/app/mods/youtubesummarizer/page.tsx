@@ -5,7 +5,6 @@ import { useState } from "react";
 const youtubesummarizer = () => {
   const [url, setUrl] = useState<String | undefined>("");
   const [result, setResult ] = useState<Array<string>>([]);
-  const res2 = 'hello\nthere!'
   async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     const res = await fetch('http://127.0.0.1:8080/api/youtubesummarizer', {
