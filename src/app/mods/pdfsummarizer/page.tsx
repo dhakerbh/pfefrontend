@@ -3,14 +3,20 @@ import "./mod1.css";
 import { useState } from "react";
 import { MdDelete } from "react-icons/md";
 
+import uploadfile from "./uploadfile";
+
 const pdfsummarizer = () => {
   const [fileName, setFileName] = useState<string>("");
   const [file, setFile] = useState<File | undefined>();
-
-  function HandleOnSubmit(e: React.SyntheticEvent) {
+  const [extractedText, setExtractedText] = useState<any>([]);
+  async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     if (file) {
       console.log("name =", file.name);
+      let objectText = await uploadfile(file);
+
+      const arrayText = Object.values(objectText);
+      setExtractedText(arrayText[0] as any);
     }
   }
   function HandleDelete() {
@@ -69,6 +75,17 @@ const pdfsummarizer = () => {
           ) : (
             <></>
           )}
+        </div>
+        <div className="result-container">
+          <div className="result-text">
+            {extractedText.map((line: any) => {
+              return (
+                <div>
+                  <span key={line}>{line}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

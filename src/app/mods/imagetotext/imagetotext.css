@@ -32,8 +32,10 @@
   cursor: pointer;
 }
 .wrappermod1 .container form img {
-  max-width: max(20vw, 500px);
-  height: max(20vh, 300px);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 10px;
 }
 .wrappermod1 .container form .input-field {
