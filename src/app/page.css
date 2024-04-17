@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #ffaeae, 0 0 22px #ff7d7d, 0 0 42px #ff5e5e, 0 0 45px #fa3e3e;
+  }
+  to {
+    text-shadow: unset;
+  }
+}
+.landing-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10vw;
+  flex-direction: row;
+  height: 570px;
+  max-width: 100%;
+  max-height: 100vh;
+  padding: 30px;
+  font-family: "Pacifico", cursive;
+}
+.landing-container .photo {
+  height: 100%;
+  width: 30%;
+  background-image: url("/main3.jpg");
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 12px;
+}
+.landing-container .text-cont {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.landing-container .text-cont span {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+.landing-container .text-cont .main-h1 {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+}
+.landing-container .text-cont a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  outline: white solid 2px;
+  height: 65px;
+  width: 200px;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 15px;
+}
+.landing-container .text-cont a:hover {
+  color: black;
+  background-color: white;
+  filter: drop-shadow(0px 0px 6px #ffffff);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}/*# sourceMappingURL=page.css.map */

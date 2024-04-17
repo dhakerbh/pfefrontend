@@ -1,18 +1,18 @@
+import './page.css'
 export default function Home() {
   return (
-    <div className="container">
-      <div className="first-cont">
-        <div className="placeholder"></div>
+    <div className="landing-container">
+          
+        <div className="photo"></div>
         <div className="text-cont">
-          <h1>
-            Elevate Your Education with Student Savior – Your Path to Excellence
+          <h1 className='main-h1'>
+            Elevate Your Education with  <span>Students Savior</span> – Your Path to Excellence
             Begins Here!
           </h1>{" "}
-          <a href="#mod1">
-            <button type="button">Start Now !</button>
-          </a>
+            <a href="/mods/youtubesummarizer">
+              Start Now 🌟
+            </a>
         </div>
-      </div>
     </div>
   );
 }
