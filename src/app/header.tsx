@@ -1,27 +1,28 @@
 "use client";
+
 import "./header.css";
 import { FaYoutube, FaRegFilePdf, FaImage } from "react-icons/fa";
 import { MdInfoOutline } from "react-icons/md";
 import { BsFiletypeTxt } from "react-icons/bs";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
+import { useEffect, useState } from "react";
 
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useState } from "react";
 
 const Header = () => {
-const header = document.querySelector(".header");
 const [isSticky,setIsSticky]= useState<boolean>(false)
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
-  if (currentScroll > 75) {
-    setIsSticky(true)
-  } else {
-    setIsSticky(false)
-  }
-});
+useEffect(function mount() {window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > 75) {
+      setIsSticky(true)
+    } else {
+      setIsSticky(false)
+    }
+  })},[])
+
   const { t, i18n } = useTranslation();
   return (
-    <header className={isSticky ? 'sticky' : ''}>
+    <header className={isSticky ? 'sticky' : ''} >
       <div className="logo">
       <a href="/">
         <h1>
@@ -50,7 +51,7 @@ window.addEventListener("scroll", () => {
         <BsFiletypeTxt className="react-icons" />
         Text Summarizer
       </a>
-      <a className="head-elem" href="/about">
+      <a className="head-elem" href="/about" >
         <MdInfoOutline className="react-icons" />
         {t("About us")}
       </a>

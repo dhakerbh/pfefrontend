@@ -18,7 +18,6 @@ const pdfsummarizer = () => {
       let objectText = await uploadfile(image);
 
       const arrayText = Object.values(objectText);
-      console.log({ arrayText });
       setExtractedText(arrayText[0] as any);
     }
   }
@@ -43,9 +42,8 @@ const pdfsummarizer = () => {
         <div className="text">
           <h1>Our Image To Text extractor is the best !</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-            deserunt optio beatae officiis voluptates commodi aliquid minima
-            odit, enim ab?
+          Transform images into editable text with our cutting-edge image-to-text tool. Say goodbye to manual data entry
+and hello to efficient document management. Save time and reduce Errors!
           </p>
         </div>
         <form

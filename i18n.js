@@ -1,7 +1,15 @@
+import LanguageDetector from 'i18next-browser-languagedetector';
+
 const i18n = require('i18next');
 const { initReactI18next } = require('react-i18next');
 
-i18n.use(initReactI18next).init({
+const DETECTION_OPTIONS = {
+  order: ['localStorage', 'navigator'],
+  caches: ['localStorage']
+};
+
+i18n.use(LanguageDetector).use(initReactI18next).init({
+  detection: DETECTION_OPTIONS,
   resources: {
     en: {
       translation: require('./locales/en.json'),
@@ -14,9 +22,9 @@ i18n.use(initReactI18next).init({
     }
     // Add more languages and translations as needed
   },
-  lng: 'en', // Default language
+  //lng: 'en', // Default language
   fallbackLng: 'en',
-  debug: false, // Set to true for debugging
+  debug: true, // Set to true for debugging
 });
 
 export default i18n;

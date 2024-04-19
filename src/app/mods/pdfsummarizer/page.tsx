@@ -36,9 +36,9 @@ const pdfsummarizer = () => {
         <div className="text">
           <h1>Summarizing your PDFs has never been easier ! </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-            deserunt optio beatae officiis voluptates commodi aliquid minima
-            odit, enim ab?
+          Effortlessly condense lengthy PDF documents into digestible summaries with our user-friendly tool. Our advanced
+algorithms extract the most important information and present it in a concise format, saving you time and hassle.
+Stay on top of your reading list without sacrificing precious time.
           </p>
         </div>
         <form

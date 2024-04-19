@@ -1,5 +1,6 @@
 import i18n from "../../i18n";
 import "./LanguageSwitcher.css";
+
 export default function LanguageSwitcher() {
   const changeLanguage = (lng: any) => {
     i18n.changeLanguage(lng);

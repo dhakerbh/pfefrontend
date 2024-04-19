@@ -25,9 +25,9 @@ const youtubesummarizer = () => {
         <div className="text">
           <h1>Summarizing your YouTube Videos in one click !</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-            deserunt optio beatae officiis voluptates commodi aliquid minima
-            odit, enim ab?
+          Quickly get the essence of any YouTube video with our innovative summarization tool. Our AI-powered technology
+extracts the key points and important information from the video, delivering it in a concise and easily
+digestible format. Save time and effort while staying informed on the topics that matter most to you.
           </p>
         </div>
         <div className="main">

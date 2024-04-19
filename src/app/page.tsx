@@ -1,7 +1,8 @@
 import './page.css'
+
 export default function Home() {
   return (
-    <div className="landing-container">
+    <div className="landing-container" >
           
         <div className="photo"></div>
         <div className="text-cont">
