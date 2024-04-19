@@ -1,8 +1,8 @@
 .wrappermod1 {
   padding: 20px 0;
   .container {
-    height: max(65vh, 300px);
-    padding: 2rem;
+    height: 100%;
+    padding: 0 2rem;
     background-position: 0;
     border-radius: 25px;
     display: flex;
@@ -11,7 +11,7 @@
     text-align: center;
     flex-direction: column;
     line-height: 2.5rem;
-    p{
+    p {
       padding: 20px 0;
       max-width: 1150px;
       line-height: 1.5rem;
@@ -39,7 +39,7 @@
       width: 180px;
       height: 50px;
       color: white;
-      background-color:unset;
+      background-color: unset;
       outline: 3px solid white !important;
       border-radius: 7px;
       border: none;

@@ -2,8 +2,8 @@
   padding: 20px 0;
 }
 .wrappermod1 .container {
-  height: max(65vh, 300px);
-  padding: 2rem;
+  height: 100%;
+  padding: 0 2rem;
   background-position: 0;
   border-radius: 25px;
   display: flex;

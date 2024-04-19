@@ -116,5 +116,48 @@ body #submit {
   max-width: 1200px;
   background-color: rgba(255, 255, 255, 0.177);
   border-radius: 15px;
-  margin-top: 2rem;
+}
+
+.loading-overlay {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(134, 134, 134, 0.4862745098);
+  display: none;
+}
+.loading-overlay .loader {
+  display: inline-grid;
+}
+.loading-overlay .loader:before,
+.loading-overlay .loader:after {
+  content: "";
+  grid-area: 1/1;
+  height: 40px;
+  aspect-ratio: 6;
+  --c: #0000 64%, #000 66% 98%, #0000 101%;
+  background: radial-gradient(35% 146% at 50% 159%, var(--c)) 0 0, radial-gradient(35% 146% at 50% -59%, var(--c)) 25% 100%;
+  background-size: 33.3333333333% 50%;
+  background-repeat: repeat-x;
+  -webkit-clip-path: inset(0 100% 0 0);
+          clip-path: inset(0 100% 0 0);
+  animation: l10 1.5s infinite linear;
+}
+.loading-overlay .loader:after {
+  scale: -1;
+}
+@keyframes l10 {
+  50% {
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 100%);
+            clip-path: inset(0 0 0 100%);
+  }
 }/*# sourceMappingURL=header.css.map */

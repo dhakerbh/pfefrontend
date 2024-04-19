@@ -1,6 +1,6 @@
 "use client";
 import "./imagetotext.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MdDelete } from "react-icons/md";
 
 import uploadfile from "./uploadfile";
@@ -10,15 +10,28 @@ const pdfsummarizer = () => {
   const [image, setImage] = useState<File | undefined>();
   const [imageURL, setImageURL] = useState<string>("");
   const [extractedText, setExtractedText] = useState<any>([]);
-
+  const overlay = useRef<HTMLDivElement>(null);
+  const scrollto = useRef<HTMLDivElement>(null);
   async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     if (image) {
-      console.log("name =", ImageName);
-      let objectText = await uploadfile(image);
+      if (overlay.current !== null) {
+        overlay.current.style.display = "flex";
+        let objectText = await uploadfile(image);
 
-      const arrayText = Object.values(objectText);
-      setExtractedText(arrayText[0] as any);
+        const arrayText = Object.values(objectText);
+        if (arrayText[0] != "Error Occured , possibly no words found ") {
+          setExtractedText(arrayText[0] as any);
+        } else {
+          console.log("error !");
+        }
+        overlay.current.style.display = "none";
+        if (scrollto.current != null)
+          scrollto.current.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+      }
     }
   }
   function HandleDelete() {
@@ -42,8 +55,9 @@ const pdfsummarizer = () => {
         <div className="text">
           <h1>Our Image To Text extractor is the best !</h1>
           <p>
-          Transform images into editable text with our cutting-edge image-to-text tool. Say goodbye to manual data entry
-and hello to efficient document management. Save time and reduce Errors!
+            Transform images into editable text with our cutting-edge
+            image-to-text tool. Say goodbye to manual data entry and hello to
+            efficient document management. Save time and reduce Errors!
           </p>
         </div>
         <form
@@ -82,7 +96,7 @@ and hello to efficient document management. Save time and reduce Errors!
             <></>
           )}
         </div>
-        <div className="result-container">
+        <div ref={scrollto} className="result-container">
           <div className="result-text">
             {extractedText.map((line: any) => {
               return (
@@ -93,6 +107,9 @@ and hello to efficient document management. Save time and reduce Errors!
             })}
           </div>
         </div>
+      </div>
+      <div ref={overlay} className="loading-overlay">
+        <div className="loader"></div>
       </div>
     </div>
   );

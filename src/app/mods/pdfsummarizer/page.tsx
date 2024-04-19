@@ -36,9 +36,11 @@ const pdfsummarizer = () => {
         <div className="text">
           <h1>Summarizing your PDFs has never been easier ! </h1>
           <p>
-          Effortlessly condense lengthy PDF documents into digestible summaries with our user-friendly tool. Our advanced
-algorithms extract the most important information and present it in a concise format, saving you time and hassle.
-Stay on top of your reading list without sacrificing precious time.
+            Effortlessly condense lengthy PDF documents into digestible
+            summaries with our user-friendly tool. Our advanced algorithms
+            extract the most important information and present it in a concise
+            format, saving you time and hassle. Stay on top of your reading list
+            without sacrificing precious time.
           </p>
         </div>
         <form
@@ -77,19 +79,7 @@ Stay on top of your reading list without sacrificing precious time.
           )}
         </div>
         <div className="result-container">
-        <div className="result dummy"><div><span>Title: THIS IS A DYMMY TEXT PLACEHOLDER
-</span></div><div><span>
-</span></div><div><span>Summary: AI chips have become a selling point for phones, but why are they suddenly necessary? While cloud-based AI has its advantages, there are limitations to offloading tasks to the cloud. Local AI processing on devices offers faster response times and better privacy. Currently, NPUs are optimized for simple AI tasks, but more advanced forms of generative AI may not be efficient enough to run on phones yet. Hardware manufacturers are still figuring out the sweet spot for AI functionality on devices, with a push towards more local processing. As AI functions become more prevalent, we can expect to see more NPUs in both phones and desktop/laptop processors.
-</span></div><div><span>
-</span></div><div><span>Important details:
-</span></div><div><span>
-</span></div><div><span>* AI chips are optimized for AI tasks but may suck at other functions.
-</span></div><div><span>* Local AI processing offers faster response times and better privacy.
-</span></div><div><span>* Cloud-based AI has its advantages, but there are limitations to offloading tasks to the cloud.
-</span></div><div><span>* NPUs are currently optimized for simple AI tasks, but more advanced forms of generative AI may not be efficient enough to run on phones yet.
-</span></div><div><span>* Hardware manufacturers are still figuring out the sweet spot for AI functionality on devices.</span></div></div>
           <div className="result-text">
-            
             {extractedText.map((line: any) => {
               return (
                 <div>
