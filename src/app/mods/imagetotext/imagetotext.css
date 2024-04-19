@@ -12,6 +12,11 @@
   flex-direction: column;
   line-height: 2.5rem;
 }
+.wrappermod1 .container p {
+  padding: 20px 0;
+  max-width: 1000px;
+  line-height: 1.5rem;
+}
 .wrappermod1 .container form {
   z-index: 1;
   height: max(20vh, 300px);
