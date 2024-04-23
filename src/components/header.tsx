@@ -8,6 +8,7 @@ import { useTranslation } from "next-i18next";
 import { useEffect, useState } from "react";
 
 import LanguageSwitcher from "./LanguageSwitcher";
+import Profile from "./profile";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState<boolean>(false);
@@ -40,7 +41,7 @@ const Header = () => {
       <div className="head-elem-container">
         <a className="head-elem" href="/mods/youtubesummarizer">
           <FaYoutube className="react-icons" />
-          YouTube Video Summarizer
+          YouTube Summarizer
         </a>
         <a className="head-elem" href="/mods/pdfsummarizer">
           <FaRegFilePdf className="react-icons" />
@@ -58,7 +59,10 @@ const Header = () => {
           <MdInfoOutline className="react-icons" />
           {t("About us")}
         </a>
-        <LanguageSwitcher />
+        {
+          //<LanguageSwitcher />
+        }{" "}
+        <Profile />
       </div>
     </header>
   );

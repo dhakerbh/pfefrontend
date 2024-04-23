@@ -1,0 +1,73 @@
+.profile-icon {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #880ea1;
+  outline: rgba(255, 255, 255, 0.408) dashed 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.profile-icon .dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.494);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 35px 15px;
+}
+.profile-icon .dropdown #logout:hover {
+  box-shadow: 0 0 20px 5px rgb(255, 32, 32);
+}
+.profile-icon .dropdown a {
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  width: 70%;
+  border: none;
+  background: none;
+  padding: 10px 15px;
+  outline: 3px solid white;
+  cursor: pointer;
+}
+.profile-icon .dropdown a:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 20px 5px rgb(43, 191, 255);
+}
+
+.loginsignup .buttons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.loginsignup .buttons a {
+  width: 100px;
+  height: 25px;
+  outline: white solid 2px;
+  text-align: center;
+  font-size: 16px;
+  padding: 1px 2px;
+  border-radius: 8px;
+}
+.loginsignup .buttons a:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 20px 5px white;
+}/*# sourceMappingURL=profile.css.map */

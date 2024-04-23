@@ -1,0 +1,57 @@
+#loginform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 100%;
+}
+#loginform label {
+  font-size: 26px;
+}
+#loginform input {
+  background-color: rgba(0, 0, 0, 0.701);
+  font-family: "Karla", sans-serif;
+  text-decoration: none;
+  outline: dashed 2px rgba(255, 255, 255, 0.52);
+  padding: 5px;
+  margin-bottom: 10px;
+  color: white;
+  height: 35px;
+  width: 300px;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+}
+#loginform #submit {
+  width: 180px;
+  height: 50px;
+  color: white;
+  background-color: unset;
+  outline: 3px solid white !important;
+  border-radius: 7px;
+  border: none;
+  font-size: 1.8rem;
+  outline: rgba(224, 224, 224, 0) dashed 2px;
+}
+#loginform #submit:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 6px #ffffff);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+#loginform p {
+  text-align: center;
+  width: 300px;
+  height: 34px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+#loginform .red {
+  background-color: rgb(201, 8, 44);
+}
+#loginform .green {
+  background-color: rgb(11, 185, 11);
+}/*# sourceMappingURL=login.css.map */
