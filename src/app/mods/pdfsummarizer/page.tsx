@@ -80,13 +80,14 @@ const pdfsummarizer = () => {
         </div>
         <div className="result-container">
           <div className="result-text">
-            {extractedText.map((line: any) => {
-              return (
-                <div>
-                  <span key={line}>{line}</span>
-                </div>
-              );
-            })}
+            {extractedText &&
+              extractedText.map((line: any) => {
+                return (
+                  <div>
+                    <span key={line}>{line}</span>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>

@@ -55,13 +55,14 @@ const youtubesummarizer = () => {
         </div>
         <div className="result-container">
           <div className="result-text">
-            {result.map((line: any) => {
-              return (
-                <div>
-                  <span key={line}>{line}</span>
-                </div>
-              );
-            })}
+            {result &&
+              result.map((line: any) => {
+                return (
+                  <div>
+                    <span key={line}>{line}</span>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>

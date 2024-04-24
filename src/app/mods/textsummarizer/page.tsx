@@ -75,7 +75,7 @@ const pdfsummarizer = () => {
           />
         </div>
         <div className="result-container">
-          <div className="result-text">{resultSummary}</div>
+          <div className="result-text">{resultSummary && resultSummary}</div>
         </div>
       </div>
     </div>

@@ -42,7 +42,11 @@
       padding: 10px 15px;
       outline: 3px solid white;
       cursor: pointer;
+      transition: all 0.15s ease-in-out;
+
       &:hover {
+        transition: all 0.2s ease-in-out;
+
         background-color: white;
         color: black;
         box-shadow: 0 0 20px 5px rgb(43, 191, 255);
@@ -67,10 +71,11 @@
       font-size: 16px;
       padding: 1px 2px;
       border-radius: 8px;
+      transition: 0.2s ease-in-out;
       &:hover {
         background-color: white;
         color: black;
-        box-shadow: 0 0 20px 5px white;
+        box-shadow: 0 0 10px 5px white;
       }
     }
   }
