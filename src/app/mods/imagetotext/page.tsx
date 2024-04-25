@@ -12,12 +12,14 @@ const pdfsummarizer = () => {
   const [extractedText, setExtractedText] = useState<any>([]);
   const overlay = useRef<HTMLDivElement>(null);
   const scrollto = useRef<HTMLDivElement>(null);
+
   async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     if (image) {
       if (overlay.current !== null) {
         overlay.current.style.display = "flex";
-        let objectText = await uploadfile(image);
+        const email = localStorage.getItem("email");
+        let objectText = await uploadfile(image, email);
 
         const arrayText = Object.values(objectText);
         if (arrayText[0] != "Error Occured , possibly no words found ") {

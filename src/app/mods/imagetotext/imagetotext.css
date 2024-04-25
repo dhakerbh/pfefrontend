@@ -71,4 +71,8 @@
   filter: drop-shadow(0px 0px 6px #ffffff);
   transition: all 0.2s ease;
   cursor: pointer;
+}
+
+.resres {
+  padding: 15px;
 }/*# sourceMappingURL=imagetotext.css.map */

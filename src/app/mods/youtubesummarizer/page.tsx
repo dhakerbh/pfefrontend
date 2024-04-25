@@ -1,29 +1,42 @@
 "use client";
 import "./youtube.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const youtubesummarizer = () => {
   const [url, setUrl] = useState<String | undefined>("");
   const [result, setResult] = useState<Array<string>>([]);
+
   async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
+    const email = localStorage.getItem("email");
     const res = await fetch("http://127.0.0.1:8080/api/youtubesummarizer", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ link: url }),
+      body: JSON.stringify({ link: url, email: email }),
     })
       .then((response) => response.json())
       .then((data) => {
         const { result } = data;
+        console.log(typeof result);
+        console.log("Result Weslat ! ");
+        console.log();
         setResult(result);
       });
   }
+  useEffect(() => {}, [result]);
   function HandleOnChange(e: React.FormEvent<HTMLInputElement>) {
     //@ts-ignore
     setUrl(e.target.value);
   }
+  const listText = result.map((line: any, i: any) => {
+    return (
+      <div key={i}>
+        <span>{line}</span>
+      </div>
+    );
+  });
   return (
     <div className="wrappermod1">
       <div className="container">
@@ -54,16 +67,7 @@ const youtubesummarizer = () => {
           />
         </div>
         <div className="result-container">
-          <div className="result-text">
-            {result &&
-              result.map((line: any) => {
-                return (
-                  <div>
-                    <span key={line}>{line}</span>
-                  </div>
-                );
-              })}
-          </div>
+          <div className="result-text">{listText}</div>
         </div>
       </div>
     </div>

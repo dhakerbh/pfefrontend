@@ -8,26 +8,33 @@ ______ _____ _   _ _____ _____ _   _  ___________
 \_|    \___/\_| \_/\___/\____/\_| |_/\____/|___/  
 */
 import "./textsum.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 //import get_summary from "./getsummary";
 const pdfsummarizer = () => {
   const [text, setText] = useState<string>("");
   const [resultSummary, setResultSummary] = useState<string>("");
+  const overlay = useRef<HTMLDivElement>(null);
+
   useEffect(() => {}, [resultSummary]);
 
   async function get_summary(text: string) {
-    const req = await fetch("http://127.0.0.1:8080/api/summarizetext", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ text: text }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        const { message } = data;
-        setResultSummary(message);
-      });
+    const email = localStorage.getItem("email");
+    if (overlay.current !== null) {
+      overlay.current.style.display = "flex";
+      const req = await fetch("http://127.0.0.1:8080/api/summarizetext", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: text, email: email }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const { message } = data;
+          setResultSummary(message);
+        });
+      overlay.current.style.display = "none";
+    }
   }
 
   async function HandleOnSubmit(e: React.SyntheticEvent) {
@@ -77,6 +84,9 @@ const pdfsummarizer = () => {
         <div className="result-container">
           <div className="result-text">{resultSummary && resultSummary}</div>
         </div>
+      </div>
+      <div ref={overlay} className="loading-overlay">
+        <div className="loader"></div>
       </div>
     </div>
   );

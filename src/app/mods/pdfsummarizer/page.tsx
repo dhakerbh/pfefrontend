@@ -13,7 +13,8 @@ const pdfsummarizer = () => {
     e.preventDefault();
     if (file) {
       console.log("name =", file.name);
-      let objectText = await uploadfile(file);
+      const email = localStorage.getItem("email");
+      const objectText = await uploadfile(file, email);
 
       const arrayText = Object.values(objectText);
       setExtractedText(arrayText[0] as any);
