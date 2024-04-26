@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.hs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0;
+}
+.line {
+  &:nth-of-type(odd) {
+    background-color: red;
+    background-color: rgba(177, 172, 172, 0.212);
+  }
+  background-color: rgba(69, 62, 62, 0.212);
+  backdrop-filter: blur(5px);
+  padding: 15px 0;
+  display: flex;
+  width: 100%;
+  height: max-content;
+  justify-content: flex-start;
+  gap: 40px;
+  height: min-content;
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  .module {
+    min-height: 100%;
+    width: 400px;
+    font-size: 110px;
+    background-color: rgba(255, 255, 255, 0.212);
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+    }
+  }
+  .details {
+    max-width: 65vw;
+  }
+}

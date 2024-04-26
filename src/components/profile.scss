@@ -11,6 +11,8 @@
   align-items: center;
   cursor: pointer;
   .dropdown {
+    z-index: 100;
+    backdrop-filter: blur(10px);
     position: absolute;
     top: 100%;
     right: 0;
