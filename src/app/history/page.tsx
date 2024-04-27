@@ -42,50 +42,52 @@ const history = () => {
   }
   return (
     <div className="hs-container">
-      {historyElements.length == 0 && (
-        <div className="nohistory">No History yet , Create One </div>
-      )}
-      {historyElements &&
-        historyElements.map((line: any, id: any) => {
-          return (
-            <div className="line" key={id}>
-              <div className="module">
-                <span className="icon">{getIcon(line.module)}</span>
-              </div>
-              <div className="details">
-                <div className="about">
-                  <p id="link">{line.link}</p>
-                  <p id="time">{line.time}</p>
+      {email && <h1>My History </h1>}
+      <div className="hs">
+        {historyElements.length == 0 && (
+          <div className="nohistory">No History yet , Create One </div>
+        )}
+        {historyElements &&
+          historyElements.map((line: any, id: any) => {
+            const data = line.data.toString();
+            return (
+              <div className="line" key={id}>
+                <div className="module">
+                  <span className="icon">{getIcon(line.module)}</span>
                 </div>
-                <div className="content">
-                  <h4>
-                    {showMoreList[id]
-                      ? line.data
-                      : `${line.data.toString().substring(0, 255)}...`}
-
-                    <button
-                      className="btn"
-                      onClick={() => {
-                        let arr = showMoreList;
-                        setShowMoreList(
-                          showMoreList.map((item, index) =>
-                            index == id ? !item : item
-                          )
-                        );
-                        console.log(showMoreList[id]);
-                      }}
-                    >
-                      {showMoreList[id] ? "Show less" : "Show more"}
-                    </button>
-                  </h4>
+                <div className="details">
+                  <div className="about">
+                    <p id="link">{line.link}</p>
+                    <p id="time">{line.time}</p>
+                  </div>
+                  <div className="content">
+                    <h4>
+                      {showMoreList[id]
+                        ? data.slice(["\n", "`\t"])
+                        : `${data.substring(0, 455)}...`}
+                      {data.length > 455 && (
+                        <button
+                          className="btn"
+                          onClick={() => {
+                            let arr = showMoreList;
+                            setShowMoreList(
+                              showMoreList.map((item, index) =>
+                                index == id ? !item : item
+                              )
+                            );
+                            console.log(showMoreList[id]);
+                          }}
+                        >
+                          {showMoreList[id] ? "Show less" : "Show more"}
+                        </button>
+                      )}
+                    </h4>
+                  </div>
                 </div>
               </div>
-              {
-                //{email,data, link, module, time}
-              }
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
     </div>
   );
 };

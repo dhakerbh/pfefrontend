@@ -3,6 +3,15 @@
   margin: 0;
 }
 .hs-container {
+  margin: 40px 0;
+
+  h1 {
+    text-align: center;
+
+    font-size: 48px;
+  }
+}
+.hs {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,8 +32,8 @@
   justify-content: flex-start;
   gap: 40px;
   height: min-content;
-
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 400;
+  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
   .module {
     min-height: 100%;
     width: 400px;
@@ -44,5 +53,26 @@
   }
   .details {
     max-width: 65vw;
+    .about {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 20px;
+      margin-bottom: 10px;
+      color: rgb(199, 199, 199);
+    }
+    .btn {
+      text-decoration: none;
+      background-color: unset;
+      outline: none;
+      border: none;
+      font-size: 16px;
+      color: #fea2a2;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        color: #ff6363;
+      }
+    }
   }
 }

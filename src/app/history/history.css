@@ -4,6 +4,14 @@
 }
 
 .hs-container {
+  margin: 40px 0;
+}
+.hs-container h1 {
+  text-align: center;
+  font-size: 48px;
+}
+
+.hs {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +32,8 @@
   gap: 40px;
   height: -moz-min-content;
   height: min-content;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 400;
+  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
 }
 .line:nth-of-type(odd) {
   background-color: red;
@@ -50,4 +59,25 @@
 }
 .line .details {
   max-width: 65vw;
+}
+.line .details .about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  margin-bottom: 10px;
+  color: rgb(199, 199, 199);
+}
+.line .details .btn {
+  text-decoration: none;
+  background-color: unset;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: #fea2a2;
+}
+.line .details .btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #ff6363;
 }/*# sourceMappingURL=history.css.map */
