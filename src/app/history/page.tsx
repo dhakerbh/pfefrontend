@@ -40,6 +40,18 @@ const history = () => {
         setShowMoreList(arr);
       });
   }
+  async function deleteHistory(line: any) {
+    setHistoryElements(
+      historyElements.filter((item: any) => item.id != line.id)
+    );
+    await fetch("http://127.0.0.1:8080/deletehistory", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: line.email, id: line.id }),
+    }).then(() => console.log("Deleted successfully! "));
+  }
   return (
     <div className="hs-container">
       {email && <h1>My History </h1>}
@@ -69,7 +81,6 @@ const history = () => {
                         <button
                           className="btn"
                           onClick={() => {
-                            let arr = showMoreList;
                             setShowMoreList(
                               showMoreList.map((item, index) =>
                                 index == id ? !item : item
@@ -82,6 +93,14 @@ const history = () => {
                         </button>
                       )}
                     </h4>
+                    <button
+                      onClick={() => {
+                        deleteHistory(line);
+                      }}
+                    >
+                      {line.id}
+                      Delete !{" "}
+                    </button>
                   </div>
                 </div>
               </div>
