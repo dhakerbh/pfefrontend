@@ -37,6 +37,7 @@ const pdfsummarizer = () => {
     }
   }
   function HandleDelete() {
+    setExtractedText([]);
     setImage(undefined);
     setImageName("");
     setImageURL("");
