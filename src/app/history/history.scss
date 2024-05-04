@@ -36,7 +36,7 @@
   font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
   .module {
     min-height: 100%;
-    width: 400px;
+    width: 300px;
     font-size: 110px;
     background-color: rgba(255, 255, 255, 0.212);
     border-radius: 25px;
@@ -61,17 +61,55 @@
       margin-bottom: 10px;
       color: rgb(199, 199, 199);
     }
-    .btn {
-      text-decoration: none;
-      background-color: unset;
-      outline: none;
-      border: none;
-      font-size: 16px;
-      color: #fea2a2;
+    .content {
+      display: flex;
+
+      .btn {
+        text-decoration: none;
+        background-color: unset;
+        outline: none;
+        border: none;
+        font-size: 16px;
+        color: #fea2a2;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+          color: #ff6363;
+        }
+      }
+    }
+  }
+  .deletebtn {
+    width: 75px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .innerdelete {
+      width: 80px;
+      border-radius: 12px;
+      outline: 3px solid white;
+      text-wrap: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      font-size: 25px;
+
+      #deletebtn {
+        font-size: 35px !important;
+        display: inline;
+      }
       &:hover {
-        text-decoration: underline;
+        background-color: white;
+        color: red;
+        filter: drop-shadow(0px 0px 6px red);
+        transition: all 0.2s ease;
         cursor: pointer;
-        color: #ff6363;
+        /* width: 100%; */
       }
     }
   }

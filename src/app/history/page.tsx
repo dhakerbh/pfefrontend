@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { MdInfoOutline } from "react-icons/md";
+import { MdInfoOutline, MdDeleteOutline } from "react-icons/md";
 import { BsFiletypeTxt } from "react-icons/bs";
 import { FaYoutube, FaRegFilePdf, FaImage } from "react-icons/fa";
 
@@ -93,14 +93,16 @@ const history = () => {
                         </button>
                       )}
                     </h4>
-                    <button
+                  </div>
+                </div>
+                <div className="deletebtn">
+                  <div className="innerdelete">
+                    <MdDeleteOutline
+                      id="deletebtn"
                       onClick={() => {
                         deleteHistory(line);
                       }}
-                    >
-                      {line.id}
-                      Delete !{" "}
-                    </button>
+                    />
                   </div>
                 </div>
               </div>

@@ -63,7 +63,7 @@ const pdfsummarizer = () => {
           </p>
         </div>
         <textarea
-          rows={17}
+          rows={15}
           cols={100}
           id="text"
           // @ts-ignore

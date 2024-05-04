@@ -100,9 +100,10 @@ header .logo span {
 body {
   background-image: url("/wall4.jpg");
   background-color: black;
+  background-attachment: fixed;
   color: white;
   font-family: "Madimi One", sans-serif !important;
-  background-size: auto;
+  background-size: cover;
 }
 body p {
   font-family: "Karla", sans-serif;

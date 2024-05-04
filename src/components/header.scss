@@ -102,11 +102,13 @@ header {
 body {
   background-image: url("/wall4.jpg");
   background-color: black;
+  background-attachment: fixed;
+
   //background-size: 170%;
   //background-repeat:repeat-y;
   color: white;
   font-family: "Madimi One", sans-serif !important;
-  background-size: auto;
+  background-size: cover;
 
   p {
     font-family: "Karla", sans-serif;
