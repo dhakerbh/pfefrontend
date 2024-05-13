@@ -1,16 +1,25 @@
 "use client";
 import { useEffect, useState } from "react";
 import "./login.css";
-
+import { decodeToken } from "react-jwt";
 function page() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [status, setStatus] = useState<string>("");
   const [color, setColor] = useState<string>("");
-  const profile = localStorage.getItem("profile");
+  const [profile, setProfil] = useState<boolean>(false);
+
+  const token = localStorage.getItem("jwt");
+
   useEffect(() => {
-    if (profile) {
-      window.location.href = "/";
+    try {
+      // @ts-ignore
+      setProfil(decodeToken(token).profile);
+      if (profile) {
+        window.location.href = "/";
+      }
+    } catch (e) {
+      ("");
     }
   }, [profile]);
   async function handleSubmit(e: React.SyntheticEvent) {
@@ -26,10 +35,10 @@ function page() {
       .then((data) => {
         console.log(data.message, typeof data.message);
         if (data.message == "Logged in Successfully") {
-          localStorage.setItem("email", email);
-          localStorage.setItem("profile", data.profile.toUpperCase());
+          localStorage.setItem("jwt", data.token);
           setColor("green");
           setStatus(data.message);
+          window.location.href = "/";
         } else {
           setColor("red");
           setStatus(data.message);
@@ -38,44 +47,59 @@ function page() {
       .catch((error) => console.error("Error logging in user:", error));
   }
   return (
-    <form onSubmit={handleSubmit} id="loginform">
-      {color && <p className={color}>{status}</p>}
-      <br />
-      <label htmlFor="email">Email:</label>
-      <br />
+    <div className="form-container">
+      <form onSubmit={handleSubmit} id="loginform">
+        <h1>WELCOME</h1>
+        {color && <p className={color}>{status}</p>}
+        <br />
+        <label htmlFor="email">Email:</label>
+        <br />
 
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => {
-          setEmail(e.target.value);
-          setColor("");
-          setStatus("");
-        }}
-        required
-      />
-      <br />
-      <label htmlFor="password">Password:</label>
-      <br />
+        <input
+          placeholder="email@host.com"
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setColor("");
+            setStatus("");
+          }}
+          required
+        />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <br />
 
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => {
-          setPassword(e.target.value);
-          setColor("");
-          setStatus("");
-        }}
-        required
-      />
+        <input
+          placeholder="●●●●●●●●●"
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setColor("");
+            setStatus("");
+          }}
+          required
+        />
+        <br />
+        <a href="/reset" id="question">
+          {" "}
+          Reset your password
+        </a>
 
-      <br />
-      <button type="submit" id="submit">
-        Login
-      </button>
-    </form>
+        <br />
+        <button type="submit" id="submit">
+          Login
+        </button>
+        <br />
+        <a href="/register" id="question">
+          {" "}
+          Don't have Account ?
+        </a>
+      </form>
+    </div>
   );
 }
 export default page;

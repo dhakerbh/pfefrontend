@@ -37,40 +37,54 @@ function page() {
       .catch((error) => console.error("Error registering user:", error));
   }
   return (
-    <form onSubmit={handleSubmit} id="registerform">
-      {color && <p className={color}>{status}</p>}
+    <div className="form-container">
+      <form onSubmit={handleSubmit} id="registerform">
+        <h1>REGISTER</h1>
 
-      <label htmlFor="name">Full name:</label>
-      <input
-        type="text"
-        id="name"
-        value={fullname}
-        onChange={(e) => setFullname(e.target.value)}
-        required
-      />
-      <br />
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <br />
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <br />
-      <button type="submit" id="submit">
-        Register
-      </button>
-    </form>
+        {color && <p className={color}>{status}</p>}
+
+        <label htmlFor="name">Full name:</label>
+        <input
+          placeholder="Full Name"
+          type="text"
+          id="name"
+          value={fullname}
+          onChange={(e) => setFullname(e.target.value)}
+          required
+        />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <input
+          placeholder="●●●●●●●●●"
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <br />
+        <label htmlFor="email">Email:</label>
+        <input
+          placeholder="email@host.com"
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        <br />
+
+        <button type="submit" id="submit">
+          Register
+        </button>
+        <br />
+        <a href="/login" id="question">
+          {" "}
+          Already have an Account ?
+        </a>
+      </form>
+    </div>
   );
 }
 export default page;

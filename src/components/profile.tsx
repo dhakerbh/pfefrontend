@@ -1,14 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./profile.css";
+import { decodeToken } from "react-jwt";
 function Profile() {
-  const profile = localStorage.getItem("profile");
+  const [profile, setProfil] = useState<boolean>(false);
+  const token = localStorage.getItem("jwt");
+
+  useEffect(() => {
+    try {
+      // @ts-ignore
+      setProfil(decodeToken(token).profile?.toUpperCase());
+    } catch (e) {
+      ("");
+    }
+  }, [profile]);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   function logout() {
     localStorage.clear();
-    console.log("logged out ? IDK FR");
+    console.log("logged out!");
+    window.location.href = "/";
   }
   return (
     <>

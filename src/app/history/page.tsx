@@ -3,15 +3,20 @@ import { useEffect, useState } from "react";
 import { MdInfoOutline, MdDeleteOutline } from "react-icons/md";
 import { BsFiletypeTxt } from "react-icons/bs";
 import { FaYoutube, FaRegFilePdf, FaImage } from "react-icons/fa";
+import { decodeToken } from "react-jwt";
 
 import "./history.css";
 const history = () => {
   const [historyElements, setHistoryElements] = useState<Array<string>>([]);
   const [showMoreList, setShowMoreList] = useState<Array<boolean>>([]);
+  const [email, setEmail] = useState<string>("");
+
+  const token = localStorage.getItem("jwt");
+
   useEffect(() => {
+    document.title = document.title + " - History";
     getHistory();
-  }, []);
-  const email = localStorage.getItem("email");
+  }, [email]);
   function getIcon(module: any) {
     switch (module) {
       case "Youtube Summarizer":
@@ -25,7 +30,8 @@ const history = () => {
     }
   }
   async function getHistory() {
-    const email = localStorage.getItem("email");
+    // @ts-ignore
+    setEmail(decodeToken(token).email);
     await fetch("http://127.0.0.1:8080/history", {
       method: "POST",
       headers: {

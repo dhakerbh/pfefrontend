@@ -1,10 +1,31 @@
+.form-container {
+  height: calc(100vh - 100px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #loginform {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
-  width: 100%;
+  padding: 40px 0;
+  width: 450px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(12, 12, 12, 0.662);
+  border-radius: 35px;
+}
+#loginform h1 {
+  letter-spacing: 4px;
+  font-weight: 200;
+}
+#loginform #question {
+  text-decoration: none !important;
+  color: unset;
+  font-size: 14px;
 }
 #loginform label {
   font-size: 26px;
