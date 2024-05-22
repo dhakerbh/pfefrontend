@@ -12,6 +12,8 @@ function page() {
   const token = localStorage.getItem("jwt");
 
   useEffect(() => {
+    document.title = "Students Savior - Login";
+
     try {
       // @ts-ignore
       setProfil(decodeToken(token).profile);

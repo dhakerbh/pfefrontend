@@ -10,6 +10,8 @@ function page() {
   const [color, setColor] = useState<string>("");
   const profile = localStorage.getItem("profile");
   useEffect(() => {
+    document.title = "Students Savior - Register";
+
     if (profile) {
       window.location.href = "/";
     }

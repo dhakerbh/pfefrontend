@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const youtubesummarizer = () => {
   const [url, setUrl] = useState<String | undefined>("");
   const [result, setResult] = useState<Array<string>>([]);
+  const [email, setEmail] = useState<string>("");
 
   async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
@@ -25,7 +26,16 @@ const youtubesummarizer = () => {
         setResult(result);
       });
   }
-  useEffect(() => {}, [result]);
+  useEffect(() => {
+    document.title = "Students Savior - YouTube Summarizer";
+    try {
+      const token = localStorage.getItem("jwt");
+      // @ts-ignore
+      setEmail(decodeToken(token).email);
+    } catch (e) {
+      ("");
+    }
+  }, [result]);
   function HandleOnChange(e: React.FormEvent<HTMLInputElement>) {
     //@ts-ignore
     setUrl(e.target.value);

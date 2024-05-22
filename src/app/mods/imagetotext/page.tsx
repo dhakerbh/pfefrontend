@@ -1,9 +1,10 @@
 "use client";
 import "./imagetotext.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MdDelete } from "react-icons/md";
 
 import uploadfile from "./uploadfile";
+import { decodeToken } from "react-jwt";
 
 const pdfsummarizer = () => {
   const [ImageName, setImageName] = useState<string>("");
@@ -12,13 +13,24 @@ const pdfsummarizer = () => {
   const [extractedText, setExtractedText] = useState<any>([]);
   const overlay = useRef<HTMLDivElement>(null);
   const scrollto = useRef<HTMLDivElement>(null);
+  const [email, setEmail] = useState<string>("");
 
+  useEffect(() => {
+    document.title = "Students Savior - Image To Text ";
+    try {
+      const token = localStorage.getItem("jwt");
+      // @ts-ignore
+      setEmail(decodeToken(token).email);
+    } catch (e) {
+      ("");
+    }
+  });
   async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     if (image) {
       if (overlay.current !== null) {
         overlay.current.style.display = "flex";
-        const email = localStorage.getItem("email");
+
         let objectText = await uploadfile(image, email);
 
         const arrayText = Object.values(objectText);

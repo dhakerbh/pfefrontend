@@ -1,6 +1,6 @@
 "use client";
 import "./mod1.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 
 import uploadfile from "./uploadfile";
@@ -9,13 +9,24 @@ const pdfsummarizer = () => {
   const [fileName, setFileName] = useState<string>("");
   const [file, setFile] = useState<File | undefined>();
   const [extractedText, setExtractedText] = useState<any>([]);
+  const [email, setEmail] = useState<string>("");
+
+  useEffect(() => {
+    document.title = "Students Savior - PDF Summarizer";
+    try {
+      const token = localStorage.getItem("jwt");
+      // @ts-ignore
+      setEmail(decodeToken(token).email);
+    } catch (e) {
+      ("");
+    }
+  });
+
   async function HandleOnSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     if (file) {
       console.log("name =", file.name);
-      const email = localStorage.getItem("email");
       const objectText = await uploadfile(file, email);
-
       const arrayText = Object.values(objectText);
       setExtractedText(arrayText[0] as any);
     }

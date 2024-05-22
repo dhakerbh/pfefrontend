@@ -13,12 +13,22 @@ import { useEffect, useState, useRef } from "react";
 const pdfsummarizer = () => {
   const [text, setText] = useState<string>("");
   const [resultSummary, setResultSummary] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+
   const overlay = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {}, [resultSummary]);
+  useEffect(() => {
+    document.title = "Students Savior - Text Summarizer";
+    try {
+      const token = localStorage.getItem("jwt");
+      // @ts-ignore
+      setEmail(decodeToken(token).email);
+    } catch (e) {
+      ("");
+    }
+  }, [resultSummary]);
 
   async function get_summary(text: string) {
-    const email = localStorage.getItem("email");
     if (overlay.current !== null) {
       overlay.current.style.display = "flex";
       const req = await fetch("http://127.0.0.1:8080/api/summarizetext", {

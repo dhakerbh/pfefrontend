@@ -14,7 +14,8 @@ const history = () => {
   const token = localStorage.getItem("jwt");
 
   useEffect(() => {
-    document.title = document.title + " - History";
+    document.title = "Students Savior - History";
+
     getHistory();
   }, [email]);
   function getIcon(module: any) {
@@ -34,6 +35,7 @@ const history = () => {
     setEmail(decodeToken(token).email);
     await fetch("http://127.0.0.1:8080/history", {
       method: "POST",
+      credentials: "omit",
       headers: {
         "Content-Type": "application/json",
       },
@@ -44,7 +46,8 @@ const history = () => {
         setHistoryElements(data["result"]);
         let arr = new Array(data["result"].length).fill(false);
         setShowMoreList(arr);
-      });
+      })
+      .catch((e) => console.log(e));
   }
   async function deleteHistory(line: any) {
     setHistoryElements(
@@ -62,7 +65,7 @@ const history = () => {
     <div className="hs-container">
       {email && <h1>My History </h1>}
       <div className="hs">
-        {historyElements.length == 0 && (
+        {historyElements?.length == 0 && (
           <div className="nohistory">No History yet , Create One </div>
         )}
         {historyElements &&
