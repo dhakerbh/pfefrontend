@@ -1,4 +1,5 @@
 "use client";
+import { decodeToken } from "react-jwt";
 /*
 ______ _____ _   _ _____ _____ _   _  ___________ 
 |  ___|_   _| \ | |_   _/  ___| | | ||  ___|  _  \
@@ -9,6 +10,7 @@ ______ _____ _   _ _____ _____ _   _  ___________
 */
 import "./textsum.css";
 import { useEffect, useState, useRef } from "react";
+decodeToken;
 //import get_summary from "./getsummary";
 const pdfsummarizer = () => {
   const [text, setText] = useState<string>("");
@@ -24,11 +26,13 @@ const pdfsummarizer = () => {
       // @ts-ignore
       setEmail(decodeToken(token).email);
     } catch (e) {
-      ("");
+      console.log("not logged in");
     }
   }, [resultSummary]);
 
   async function get_summary(text: string) {
+    console.log(email);
+
     if (overlay.current !== null) {
       overlay.current.style.display = "flex";
       const req = await fetch("http://127.0.0.1:8080/api/summarizetext", {

@@ -5,6 +5,7 @@
 
 .hs-container {
   margin: 40px 0;
+  scroll-behavior: smooth;
 }
 .hs-container h1 {
   text-align: center;
@@ -108,12 +109,12 @@
 .line .deletebtn .innerdelete #deletebtn {
   font-size: 35px !important;
   display: inline;
+  transition: all 0.2s ease;
 }
 .line .deletebtn .innerdelete:hover {
   background-color: white;
   color: red;
   filter: drop-shadow(0px 0px 6px red);
-  transition: all 0.2s ease;
   cursor: pointer;
   /* width: 100%; */
 }/*# sourceMappingURL=history.css.map */

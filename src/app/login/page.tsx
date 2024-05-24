@@ -98,7 +98,7 @@ function page() {
         <br />
         <a href="/register" id="question">
           {" "}
-          Don't have Account ?
+          Don't have Account ? Register here !
         </a>
       </form>
     </div>

@@ -78,7 +78,9 @@ const history = () => {
                 </div>
                 <div className="details">
                   <div className="about">
-                    <p id="link">{line.link}</p>
+                    <p id="link">
+                      {line.link == "-" ? "Text input" : line.link}
+                    </p>
                     <p id="time">{line.time}</p>
                   </div>
                   <div className="content">
