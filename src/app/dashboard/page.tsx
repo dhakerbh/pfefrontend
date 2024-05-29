@@ -78,7 +78,7 @@ const history = () => {
                     <td>{line.fullname}</td>
                     <td>{line.role}</td>
                     <td>
-                      <a>Edit</a>
+                      <a href={"/dashboard/edit/" + line.id}>Edit</a>
                       <a href={"/dashboard/history/" + line.id}>History</a>
                       <a id="del">Delete</a>
                     </td>

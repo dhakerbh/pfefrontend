@@ -1,0 +1,125 @@
+"use client";
+import { useState, useEffect } from "react";
+import "./adminedit.css";
+
+// @ts-ignore
+function adminEdit({ params }) {
+  const [user, setUser] = useState<object>({});
+  const [color, setColor] = useState<string>("");
+  const [status, setStatus] = useState<string>("");
+
+  const userId = params.id;
+  const [userEmail, setUserEmail] = useState<string>();
+  // Fetch user data on component mount
+  useEffect(() => {
+    fetchUser();
+  }, [userId]); // Dependency array ensures refetch on userId change
+  const fetchUser = async () => {
+    // Replace this with your logic to fetch user data from an API or database
+    await fetch("http://127.0.0.1:8080/user", {
+      method: "POST",
+      credentials: "omit",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: userId }),
+    })
+      .then((response) => response.json())
+      .then((userData) => {
+        setUser(userData);
+        setUserEmail(userData.email);
+      });
+  };
+  // @ts-ignore
+  const handleInputChange = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+
+  const handleSaveUser = async () => {
+    // Replace this with your logic to save user data to an API or database
+    const response = await fetch("http://127.0.0.1:8080/edituser", {
+      method: "PUT",
+      credentials: "omit",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then(() => {
+        setColor("green");
+        setStatus("User details saved Successfully!");
+      })
+      .catch((e) => {
+        setColor("red");
+        setStatus("An error occured!");
+      });
+  };
+
+  return (
+    <div className="adminhscont">
+      <h1>Editing the user : {user.email ? userEmail : userId}</h1>
+
+      {user.id ? (
+        <form onSubmit={(e) => e.preventDefault()}>
+          {color && (
+            <p className={color} id="colored">
+              {status}
+            </p>
+          )}
+
+          <div>
+            <label htmlFor="fullname">Full Name:</label>
+            <input
+              type="text"
+              name="fullname"
+              value={user.fullname}
+              onChange={handleInputChange}
+              id="fullname"
+            />
+          </div>
+          <div>
+            <label htmlFor="role">Role:</label>
+            <select
+              name="role"
+              value={user.role}
+              onChange={handleInputChange}
+              id="role"
+            >
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={user.email}
+              onChange={handleInputChange}
+              id="email"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="isActivated">Activation Status:</label>
+            <input
+              type="checkbox"
+              name="isActivated"
+              checked={user.isActivated}
+              onChange={(e) => {
+                setUser({ ...user, isActivated: !user.isActivated });
+              }}
+              id="isActivated"
+            />
+          </div>
+          <button type="submit" onClick={handleSaveUser}>
+            Save
+          </button>
+        </form>
+      ) : (
+        <p>Loading user data...</p>
+      )}
+    </div>
+  );
+}
+export default adminEdit;
