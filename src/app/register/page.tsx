@@ -1,19 +1,26 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./register.css";
-
+import { decodeToken } from "react-jwt";
 function page() {
   const [fullname, setFullname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [status, setStatus] = useState<string>("");
   const [color, setColor] = useState<string>("");
-  const profile = localStorage.getItem("profile");
-  useEffect(() => {
-    document.title = "Students Savior - Register";
+  const [profile, setProfile] = useState<string>("");
+  const token = localStorage.getItem("jwt");
 
-    if (profile) {
-      window.location.href = "/";
+  useEffect(() => {
+    document.title = "Students Savior - Login";
+    try {
+      // @ts-ignore
+      setProfile(decodeToken(token).profile);
+      if (profile) {
+        window.location.href = "/";
+      }
+    } catch (e) {
+      ("");
     }
   }, [profile]);
   async function handleSubmit(e: React.SyntheticEvent) {

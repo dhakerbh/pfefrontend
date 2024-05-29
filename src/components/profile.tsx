@@ -4,12 +4,16 @@ import "./profile.css";
 import { decodeToken } from "react-jwt";
 function Profile() {
   const [profile, setProfil] = useState<boolean>(false);
+  const [userRole, setUserRole] = useState<string>("");
   const token = localStorage.getItem("jwt");
 
   useEffect(() => {
     try {
       // @ts-ignore
       setProfil(decodeToken(token).profile?.toUpperCase());
+      // @ts-ignore
+
+      setUserRole(decodeToken(token).role);
     } catch (e) {
       ("");
     }
@@ -42,7 +46,8 @@ function Profile() {
           <h1>{profile}</h1>
           {isOpen && (
             <div className="dropdown">
-              <a href="/history">History</a>
+              {userRole == "admin" && <a href="/dashboard">Admin Dashboard</a>}
+              <a href="/history">My History</a>
 
               <a href="#" id="logout" onClick={logout}>
                 Logout

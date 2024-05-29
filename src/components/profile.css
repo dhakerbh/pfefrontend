@@ -11,16 +11,14 @@
   cursor: pointer;
 }
 .profile-icon .dropdown {
-  z-index: 100;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  z-index: 1;
   position: absolute;
   top: 100%;
   right: 0;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.494);
+  background-color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 100px;
+  height: 150px;
   width: 200px;
   display: flex;
   justify-content: center;

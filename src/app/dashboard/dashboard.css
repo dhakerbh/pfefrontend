@@ -1,0 +1,164 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.hs-container {
+  margin: 40px 0;
+  scroll-behavior: smooth;
+  text-align: center;
+}
+.hs-container h1 {
+  text-align: center;
+  font-size: 48px;
+}
+
+.hs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.line {
+  background-color: rgba(69, 62, 62, 0.212);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 15px 0;
+  display: flex;
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  justify-content: flex-start;
+  gap: 40px;
+  height: -moz-min-content;
+  height: min-content;
+  font-weight: 400;
+  font-family: "Segoe UI Adjusted", "Segoe UI", "Liberation Sans", sans-serif;
+}
+.line:nth-of-type(odd) {
+  background-color: red;
+  background-color: rgba(177, 172, 172, 0.212);
+}
+.line .module {
+  min-height: 100%;
+  width: 300px;
+  font-size: 110px;
+  background-color: rgba(255, 255, 255, 0.212);
+  border-radius: 25px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line .module .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+.line .details {
+  max-width: 65vw;
+}
+.line .details .about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  margin-bottom: 10px;
+  color: rgb(199, 199, 199);
+}
+.line .details .content {
+  display: flex;
+}
+.line .details .content .btn {
+  text-decoration: none;
+  background-color: unset;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  color: #fea2a2;
+}
+.line .details .content .btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #ff6363;
+}
+.line .deletebtn {
+  width: 75px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line .deletebtn .innerdelete {
+  width: 80px;
+  border-radius: 12px;
+  outline: 3px solid white;
+  text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  font-size: 25px;
+}
+.line .deletebtn .innerdelete #deletebtn {
+  font-size: 35px !important;
+  display: inline;
+  transition: all 0.2s ease;
+}
+.line .deletebtn .innerdelete:hover {
+  background-color: white;
+  color: red;
+  filter: drop-shadow(0px 0px 6px red);
+  cursor: pointer;
+  /* width: 100%; */
+}
+
+table {
+  width: 80%;
+  margin: 100px;
+}
+
+tr {
+  line-height: 35px;
+  min-width: 300px;
+  height: 50px;
+}
+
+.hs-container a {
+  color: white;
+  border: none;
+  text-align: center;
+  margin-right: 15px;
+  height: 35px;
+  width: 105px;
+  padding: 5px;
+  text-decoration: none;
+  background-color: unset;
+  outline: 1px solid white;
+  border-radius: 7px;
+  border: none;
+  font-size: 1.2rem;
+}
+.hs-container a:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 6px #ffffff);
+  transition: all 0.2s smooth;
+  cursor: pointer;
+  outline: 1px solid black;
+}
+.hs-container #del {
+  background-color: red;
+}
+.hs-container #del:hover {
+  outline: 2px solid white !important;
+  filter: drop-shadow(0px 0px 6px red);
+  background-color: rgb(255, 107, 107);
+}/*# sourceMappingURL=dashboard.css.map */

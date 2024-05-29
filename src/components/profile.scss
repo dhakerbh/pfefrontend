@@ -11,15 +11,14 @@
   align-items: center;
   cursor: pointer;
   .dropdown {
-    z-index: 100;
-    backdrop-filter: blur(10px);
+    z-index: 1;
     position: absolute;
     top: 100%;
     right: 0;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.494);
+    background-color: black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 100px;
+    height: 150px;
     width: 200px;
     display: flex;
     justify-content: center;
@@ -48,7 +47,6 @@
 
       &:hover {
         transition: all 0.2s ease-in-out;
-
         background-color: white;
         color: black;
         box-shadow: 0 0 20px 5px rgb(43, 191, 255);
