@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import "./adminedit.css";
+import "./edit.css";
+import { decodeToken } from "react-jwt";
 
 // @ts-ignore
 function adminEdit({ params }) {
@@ -8,8 +9,10 @@ function adminEdit({ params }) {
   const [color, setColor] = useState<string>("");
   const [status, setStatus] = useState<string>("");
 
-  const userId = params.id;
+  const userId = decodeToken(localStorage.getItem("jwt")).id;
+
   const [userEmail, setUserEmail] = useState<string>();
+
   useEffect(() => {
     fetchUser();
   }, [userId]);
@@ -54,7 +57,7 @@ function adminEdit({ params }) {
 
   return (
     <div className="adminhscont">
-      <h1>Editing the user : {user.email ? userEmail : userId}</h1>
+      <h1>Editing Profile</h1>
 
       {user.id ? (
         <form onSubmit={(e) => e.preventDefault()}>
@@ -74,18 +77,7 @@ function adminEdit({ params }) {
               id="fullname"
             />
           </div>
-          <div>
-            <label htmlFor="role">Role:</label>
-            <select
-              name="role"
-              value={user.role}
-              onChange={handleInputChange}
-              id="role"
-            >
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
-            </select>
-          </div>
+
           <div>
             <label htmlFor="email">Email:</label>
             <input
@@ -94,19 +86,6 @@ function adminEdit({ params }) {
               value={user.email}
               onChange={handleInputChange}
               id="email"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="isActivated">Activation Status:</label>
-            <input
-              type="checkbox"
-              name="isActivated"
-              checked={user.isActivated}
-              onChange={(e) => {
-                setUser({ ...user, isActivated: !user.isActivated });
-              }}
-              id="isActivated"
             />
           </div>
           <button type="submit" onClick={handleSaveUser}>

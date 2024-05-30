@@ -47,6 +47,8 @@ function Profile() {
           {isOpen && (
             <div className="dropdown">
               {userRole == "admin" && <a href="/dashboard">Admin Dashboard</a>}
+              <a href="/me"> Profile</a>
+
               <a href="/history">My History</a>
 
               <a href="#" id="logout" onClick={logout}>

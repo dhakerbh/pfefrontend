@@ -1,0 +1,20 @@
+.profile-page-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70vh;
+  padding: 25px 0;
+}
+
+.details {
+  background-color: rgba(0, 0, 0, 0.489);
+  width: 70%;
+}
+.details h2 {
+  font-size: 53px;
+  margin: 30px;
+}
+.details p {
+  margin: 15px 30px;
+  font-size: 25px;
+}/*# sourceMappingURL=me.css.map */

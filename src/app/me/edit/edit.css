@@ -1,0 +1,99 @@
+:root {
+  --arrow-icon: url("/arrow.svg");
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+.adminhscont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 85vh;
+  gap: 20px;
+}
+.adminhscont form {
+  outline: 2px dashed rgba(255, 255, 255, 0.564);
+  background-color: rgba(0, 0, 0, 0.391);
+  border-radius: 7px;
+  overflow: hidden;
+  padding: 60px 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24px;
+  gap: 10px;
+}
+.adminhscont form label {
+  display: block;
+  clear: both;
+  text-align: center;
+}
+.adminhscont form input {
+  height: 35px;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  font-size: 20px;
+  outline: unset;
+  padding: 2px 5px;
+}
+.adminhscont form button {
+  height: 50px;
+  width: 120px;
+  color: white;
+  background-color: unset;
+  outline: 3px solid white !important;
+  border-radius: 7px;
+  border: none;
+  font-size: 1.8rem;
+  outline: rgba(224, 224, 224, 0) dashed 2px;
+}
+.adminhscont form button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  filter: drop-shadow(0px 0px 6px #ffffff);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.adminhscont form #colored {
+  text-align: center;
+  width: 220px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+}
+.adminhscont form .red {
+  background-color: rgb(201, 8, 44);
+}
+.adminhscont form .green {
+  background-color: rgb(11, 185, 11);
+}
+.adminhscont form select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  height: 45px;
+  width: 263px;
+  padding-left: 10px;
+  background: var(--arrow-icon) no-repeat right 0.8em center/1.4em, linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: white;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+.adminhscont form select::-ms-expand {
+  display: none;
+}
+.adminhscont form select:focus {
+  outline: none;
+}
+.adminhscont form select option {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.607);
+}/*# sourceMappingURL=edit.css.map */

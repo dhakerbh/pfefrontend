@@ -1,0 +1,45 @@
+.big-profile-container {
+  width: 300px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.214);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 15px;
+}
+.big-profile-icon {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #ff7d7d;
+  outline: rgba(255, 255, 255, 0.678) dashed 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 130px;
+}
+.buttons {
+  color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 15px 0;
+  border-radius: 7px;
+  a {
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    color: inherit;
+    &:hover {
+      transition: background-color 0.2s ease-in-out;
+      background-color: rgb(64, 64, 64);
+    }
+  }
+}
