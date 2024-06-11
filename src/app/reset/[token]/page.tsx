@@ -3,6 +3,7 @@
 import { METHODS } from "http";
 import { useEffect, useState } from "react";
 import "./token.css";
+import { stringify } from "querystring";
 // @ts-ignore
 function resetPass({ params }) {
   const [verified, setVerified] = useState(false);
@@ -33,9 +34,9 @@ function resetPass({ params }) {
   }
 
   const handleSave = async () => {
-    if (pass1 != pass2) {
+    if (pass1 != pass2 || !pass1 || pass1.length < 6) {
       setColor("red");
-      setStatus("Password doesn't match !");
+      setStatus("Verify passwords match and length");
       return "";
     } else {
       await fetch("http://127.0.0.1:8080/changepassword", {
@@ -44,7 +45,7 @@ function resetPass({ params }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ password: pass1 }),
+        body: JSON.stringify({ password: pass1, token: token }),
       })
         .then(() => {
           setColor("green");
@@ -73,10 +74,13 @@ function resetPass({ params }) {
               type="password"
               name="pass1"
               value={pass1}
+              minLength={6}
+              maxLength={40}
               onChange={(e) => {
                 setPass1(e.target.value);
               }}
               id="pass1"
+              required
             />
 
             <input
@@ -87,6 +91,7 @@ function resetPass({ params }) {
                 setPass2(e.target.value);
               }}
               id="pass2"
+              required
             />
             <button type="submit" onClick={handleSave}>
               Update
